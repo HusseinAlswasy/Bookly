@@ -4,4 +4,4 @@ const KPrimaryColor = Color(0xff100B20);
 
 const KTranstionduration = Duration(milliseconds: 250);
 
-const kGTSetraFine = 'GT Sectra Fine';
+const kGTSetraFine = 'GT Sectra Fine Regular';
