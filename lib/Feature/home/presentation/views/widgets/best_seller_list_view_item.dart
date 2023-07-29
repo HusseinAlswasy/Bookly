@@ -22,7 +22,7 @@ class BestSellerListViewItem extends StatelessWidget {
               GoRouter.of(context).push(AppRouter.KDetailsView);
             },
             child: SizedBox(
-              height: 130,
+              height: 125,
               child: AspectRatio(
                 aspectRatio: 2.5 / 4,
                 child: Container(
