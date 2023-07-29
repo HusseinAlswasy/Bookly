@@ -1,3 +1,4 @@
+import 'package:bookly/Feature/home/presentation/views/widgets/custom_button.dart';
 import 'package:bookly/Feature/home/presentation/views/widgets/custome_book_rating.dart';
 import 'package:bookly/Feature/home/presentation/views/widgets/custome_details_book_appbar.dart';
 import 'package:bookly/Feature/home/presentation/views/widgets/custome_list_view_item.dart';
@@ -59,6 +60,7 @@ class titleAndSubTitileAndRating extends StatelessWidget {
           height: 10,
         ),
         const BookRating(),
+        const CustomButton(),
       ],
     );
   }
