@@ -1,6 +1,5 @@
 import 'package:bookly/Feature/home/presentation/views/widgets/custome_details_book_appbar.dart';
 import 'package:bookly/Feature/home/presentation/views/widgets/custome_list_view_item.dart';
-import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -10,19 +9,35 @@ class BookDetailsViewsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
-        const SizedBox(
+        SizedBox(
           height: 35,
         ),
-        const CustomAppBarBookDetails(),
-        const SizedBox(
+        CustomAppBarBookDetails(),
+        SizedBox(
           height: 25,
         ),
-        const Padding(
+        Padding(
           padding: EdgeInsets.symmetric(horizontal: 95),
           child: FeatureListViewItem(),
         ),
+        SizedBox(
+          height: 28,
+        ),
+        titleAndSubTitileAndRating(),
+      ],
+    );
+  }
+}
+
+class titleAndSubTitileAndRating extends StatelessWidget {
+  const titleAndSubTitileAndRating({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
         Center(
           child: Text(
             'The Jungle Book',
@@ -30,11 +45,17 @@ class BookDetailsViewsBody extends StatelessWidget {
                 .copyWith(fontWeight: FontWeight.bold, fontSize: 25),
           ),
         ),
+        const SizedBox(
+          height: 4,
+        ),
         const Center(
           child: Text(
             'Rudyard Kipling',
             style: Styles.textStyle16,
           ),
+        ),
+        const SizedBox(
+          height: 10,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
