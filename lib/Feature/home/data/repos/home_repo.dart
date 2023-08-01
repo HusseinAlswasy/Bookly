@@ -1,5 +1,8 @@
+import 'package:bookly/Feature/home/data/models/book_model/book_model.dart';
+import 'package:bookly/core/error/failuers.dart';
+import 'package:dartz/dartz.dart';
+
 abstract class HomeRepo {
-  //i write method is control in home screen
-  FeaturedBooksListView();
-  BestSellerListView();
+  Future<Either<Failuer, List<BookModel>>> featuredBooksListView();
+  Future<Either<Failuer, List<BookModel>>> bestSellerListView();
 }
