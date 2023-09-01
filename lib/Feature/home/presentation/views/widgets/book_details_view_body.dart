@@ -1,6 +1,6 @@
 import 'package:bookly/Feature/home/presentation/views/widgets/custom_button.dart';
 import 'package:bookly/Feature/home/presentation/views/widgets/custome_details_book_appbar.dart';
-import 'package:bookly/Feature/home/presentation/views/widgets/custome_list_view_item.dart';
+import 'package:bookly/Feature/home/presentation/views/widgets/Custom_Book_Image.dart';
 import 'package:bookly/Feature/home/presentation/views/widgets/similar_box_list_view.dart';
 import 'package:bookly/Feature/home/presentation/views/widgets/title_subtitle_for_detaile_page.dart';
 import 'package:bookly/core/utils/styles.dart';
@@ -26,7 +26,7 @@ class BookDetailsViewsBody extends StatelessWidget {
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 95),
-                child: FeatureListViewItem(),
+                child: CustomeBookImage(imageUrl:' https://edit.org/images/cat/book-covers-big-2019101610.jpg',),
               ),
               const SizedBox(
                 height: 28,

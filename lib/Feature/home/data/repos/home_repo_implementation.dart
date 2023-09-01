@@ -35,7 +35,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data = await apiServices.get(
           endPoint:
-              'volumes?Filtering=free-ebooks&Sorting=newest &q=computer science');
+              'volumes?Filtering=free-ebooks&q=subject:Programming');
 
       List<BookModel> books = [];
       for (var item in data['items']) {

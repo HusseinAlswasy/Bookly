@@ -1,4 +1,4 @@
-import 'package:bookly/Feature/home/presentation/views/widgets/custome_list_view_item.dart';
+import 'package:bookly/Feature/home/presentation/views/widgets/Custom_Book_Image.dart';
 import 'package:flutter/material.dart';
 
 class SimilarListviewBooks extends StatelessWidget {
@@ -16,7 +16,7 @@ class SimilarListviewBooks extends StatelessWidget {
           itemBuilder: (context, index) {
             return const Padding(
               padding: EdgeInsets.only(right: 8),
-              child: FeatureListViewItem(),
+              child: CustomeBookImage(imageUrl: 'https://edit.org/images/cat/book-covers-big-2019101610.jpg',),
             );
           },
         ),
