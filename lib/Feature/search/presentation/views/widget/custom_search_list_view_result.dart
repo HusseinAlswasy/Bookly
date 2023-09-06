@@ -11,9 +11,10 @@ class CustomeSearchListViewResult extends StatelessWidget {
       padding: EdgeInsets.zero,
       itemCount: 10,
       itemBuilder: (context, index) {
-        return const Padding(
+        return Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
-          child: BestSellerListViewItem(),
+          // child: BookListViewItem(bookModel: null,),
+          child:Text('hussein'),
         );
       },
     );

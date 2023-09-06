@@ -29,7 +29,7 @@ class titleAndSubTitileAndRating extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        const BookRating(),
+        BookRating(),
       ],
     );
   }
