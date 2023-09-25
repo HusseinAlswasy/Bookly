@@ -22,10 +22,10 @@ class ServerFailuer extends Failuer {
             dioError.response!.statusCode!, dioError.response!.data);
       case DioErrorType.cancel:
         return ServerFailuer('Request to App is cancel');
-      case DioErrorType.unknown:
-        return ServerFailuer('Please Try again');
+      case DioErrorType.connectionError:
+        return ServerFailuer('Please Try again , No Internet connection ');
       default:
-        return ServerFailuer('Error Try again');
+        return ServerFailuer('No Internet connection , Please Try again');
     }
   }
 
