@@ -1,3 +1,4 @@
+import 'package:bookly/Feature/home/data/models/book_model/book_model.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class CustomeBookImage extends StatelessWidget {
         child: AspectRatio(
           aspectRatio: 2.7 / 4,
           child: CachedNetworkImage(
-            imageUrl: imageUrl,
+            imageUrl:imageUrl,
             fit: BoxFit.fill,
             errorWidget: (context, url, error) => Icon(Icons.error_outline_rounded),
           ),

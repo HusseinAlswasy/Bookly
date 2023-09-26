@@ -1,10 +1,13 @@
+import 'package:bookly/Feature/home/data/models/book_model/book_model.dart';
 import 'package:bookly/Feature/home/presentation/views/widgets/custome_book_rating.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
 class titleAndSubTitileAndRating extends StatelessWidget {
-  const titleAndSubTitileAndRating({super.key});
+  const titleAndSubTitileAndRating({super.key, required this.book});
+
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
@@ -12,24 +15,28 @@ class titleAndSubTitileAndRating extends StatelessWidget {
       children: [
         Center(
           child: Text(
-            'The Jungle Book',
+            book.volumeInfo!.title! ?? '',
             style: Styles.textStyle30
                 .copyWith(fontWeight: FontWeight.bold, fontSize: 25),
+            textAlign: TextAlign.center,
           ),
         ),
         const SizedBox(
           height: 4,
         ),
-        const Center(
+        Center(
           child: Text(
-            'Rudyard Kipling',
+            book.volumeInfo!.authors![0] ?? '',
             style: Styles.textStyle16,
           ),
         ),
         const SizedBox(
           height: 10,
         ),
-        BookRating(rating: '5',count: 120,),
+        BookRating(
+          rating: book.volumeInfo!.publishedDate ?? 0,
+          count: book.volumeInfo!.pageCount ?? 0,
+        ),
       ],
     );
   }

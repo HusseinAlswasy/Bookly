@@ -15,15 +15,19 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data = await apiServices.get(
           endPoint:
-              'volumes?Filtering=free-ebooks&Sorting=newest &q=computer science');
+          'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:antiquities');
 
       List<BookModel> books = [];
       for (var item in data['items']) {
-        books.add(BookModel.fromJson(item));
+        try{
+          books.add(BookModel.fromJson(item));
+        }catch (e) {
+          books.add(BookModel.fromJson(item));
+        }
       }
       return right(books);
     } on Exception catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return left(ServerFailuer.fromDioError(e));
       }
       return left(ServerFailuer(e.toString()));
@@ -35,19 +39,15 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data = await apiServices.get(
           endPoint:
-              'volumes?Filtering=free-ebooks&q=subject:Programming');
+          'volumes?Filtering=free-ebooks&q=subject:Programming');
 
       List<BookModel> books = [];
       for (var item in data['items']) {
-        try{
-          books.add(BookModel.fromJson(item));
-        }catch(e){
-          print(item);
-        }
+        books.add(BookModel.fromJson(item));
       }
       return right(books);
     } on Exception catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return left(ServerFailuer.fromDioError(e));
       }
       return left(ServerFailuer(e.toString()));
@@ -55,26 +55,24 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failuer, List<BookModel>>> fetchSimilarBooks({required String category})async {
+  Future<Either<Failuer, List<BookModel>>> fetchSimilarBooks(
+      {required String category}) async {
     try {
       var data = await apiServices.get(
-          endPoint:
-          'volumes?Filtering=free-ebooks&Sorting=relevance &q=subject:Programming');
-
+        endPoint:
+        'volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:history');
       List<BookModel> books = [];
       for (var item in data['items']) {
-        try{
-          books.add(BookModel.fromJson(item));
-        }catch(e){
-          print(item);
-        }
+        books.add(BookModel.fromJson(item));
       }
       return right(books);
     } on Exception catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return left(ServerFailuer.fromDioError(e));
       }
       return left(ServerFailuer(e.toString()));
     }
   }
+
+
 }

@@ -6,9 +6,12 @@ import 'package:bookly/Feature/home/presentation/views/widgets/title_subtitle_fo
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class BookDetailsViewsBody extends StatelessWidget {
-  const BookDetailsViewsBody({super.key});
+import '../../../data/models/book_model/book_model.dart';
 
+class BookDetailsViewsBody extends StatelessWidget {
+  const BookDetailsViewsBody({super.key, required this.bookModel});
+
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -24,14 +27,16 @@ class BookDetailsViewsBody extends StatelessWidget {
               const SizedBox(
                 height: 25,
               ),
-              const Padding(
+               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 95),
-                child: CustomeBookImage(imageUrl:' https://edit.org/images/cat/book-covers-big-2019101610.jpg',),
+                 child: CustomeBookImage(
+                   imageUrl: bookModel.volumeInfo!.imageLinks?.thumbnail ?? '',
+                 ),
               ),
               const SizedBox(
                 height: 28,
               ),
-              const titleAndSubTitileAndRating(),
+              titleAndSubTitileAndRating(book: bookModel,),
               const CustomButton(),
               const Expanded(
                 child: SizedBox(
@@ -63,3 +68,4 @@ class BookDetailsViewsBody extends StatelessWidget {
     );
   }
 }
+
