@@ -37,7 +37,7 @@ class BookDetailsViewsBody extends StatelessWidget {
                 height: 28,
               ),
               titleAndSubTitileAndRating(book: bookModel,),
-              const CustomButton(),
+              CustomButton(bookModel: bookModel,),
               const Expanded(
                 child: SizedBox(
                   height: 50,
